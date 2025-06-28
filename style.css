@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: radial-gradient(circle, #ae84ed, #230550);
+    color: #171596;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px #000;
+    margin: 10px 0;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    width: 220px;
+    max-width: 90%;
+}
+
+.roleta {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 10px solid #130101;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .5);
+    transform: rotate(0deg);
+    transition: transform 5s ease-out;
+    margin-top: 20px;
+}
+
+.seta {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid #24d509;
+    z-index: 10;
+}
+
+.premios {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.premio {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    text-align: center;
+    padding: 5px;
+}
+
+.botao {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #00c6ff;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    max-width: 90%;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff700;
+    text-shadow: 2px 2px 4px #000;
+    max-width: 90%;
+}
+
+/* Efeitos decorativos no fundo */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-radial-gradient(circle at center, rgba(255, 255, 255, .2),
+            rgba(255, 255, 255, .2) 2px, transparent 2px, transparent 10px);
+    animation: luzes 1s infinite linear;
+    opacity: .3;
+    z-index: 1;
+}
+
+body::after {
+    transform: rotate(45deg);
+    animation-delay: .5s;
+}
+
+@keyframes luzes {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .roleta {
+        width: 240px;
+        height: 240px;
+    }
+
+    .botao {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .resultado {
+        font-size: 18px;
+    }
+
+    .premio {
+        font-size: 12px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .roleta {
+        width: 280px;
+        height: 280px;
+    }
+
+    .botao {
+        font-size: 17px;
+    }
+
+    .premio {
+        font-size: 13px;
+    }
+}
+
+/* Telas grandes */
+@media (min-width: 1024px) {
+    .roleta {
+        width: 360px;
+        height: 360px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .botao {
+        font-size: 20px;
+        padding: 18px 35px;
+    }
+
+    .premio {
+        font-size: 16px;
+    }
+}
+
+
+
+h1 {
+    background-color: rgb(203, 203, 215);
+    cursor: pointer;
+
+}
